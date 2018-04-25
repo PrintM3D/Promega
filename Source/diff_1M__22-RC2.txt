@@ -1,0 +1,285 @@
+diff --git a/.cproject b/.cproject
+index 76cc2e2..7625cfb 100644
+--- a/.cproject
++++ b/.cproject
+@@ -141,7 +141,7 @@
+ 							<option id="cdt.managedbuild.option.gnu.cross.path.1491883811" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" useByScannerDiscovery="false" value="${GccPath}" valueType="string"/>
+ 							<option id="cdt.managedbuild.option.gnu.cross.prefix.353555591" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" useByScannerDiscovery="false" value="arm-none-eabi-" valueType="string"/>
+ 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.857793524" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+-							<builder buildPath="${workspace_loc:/RepRapFirmware}/Release" id="cdt.managedbuild.builder.gnu.cross.1026937542" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.builder.gnu.cross"/>
++							<builder buildPath="${workspace_loc:/RepRapFirmware}/Release" id="cdt.managedbuild.builder.gnu.cross.1026937542" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" stopOnErr="false" superClass="cdt.managedbuild.builder.gnu.cross"/>
+ 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1415072364" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+ 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.769576359" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+ 							</tool>
+@@ -717,8 +717,8 @@
+ 	<storageModule moduleId="refreshScope" versionNumber="2">
+ 		<configuration configurationName="Alligator"/>
+ 		<configuration configurationName="SAME70"/>
+-		<configuration configurationName="RADDS"/>
+ 		<configuration configurationName="Duet2"/>
++		<configuration configurationName="RADDS"/>
+ 		<configuration configurationName="DuetM"/>
+ 		<configuration configurationName="Duet085"/>
+ 	</storageModule>
+diff --git a/.gitignore b/.gitignore
+index 09bdd33..7fd436d 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -5,3 +5,5 @@
+ !Release/*/*/*.bin
+ *~
+ *orig
++/Duet2/
++/DuetM/
+diff --git a/.settings/language.settings.xml b/.settings/language.settings.xml
+index a8f44d8..f1cf463 100644
+--- a/.settings/language.settings.xml
++++ b/.settings/language.settings.xml
+@@ -5,7 +5,7 @@
+ 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+ 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+ 			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+-			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="1189573167678144698" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
++			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="-1435354527064474269" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+ 				<language-scope id="org.eclipse.cdt.core.gcc"/>
+ 				<language-scope id="org.eclipse.cdt.core.g++"/>
+ 			</provider>
+@@ -16,7 +16,7 @@
+ 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+ 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+ 			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+-			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="1189573167678144698" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
++			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="-1435354527064474269" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+ 				<language-scope id="org.eclipse.cdt.core.gcc"/>
+ 				<language-scope id="org.eclipse.cdt.core.g++"/>
+ 			</provider>
+@@ -27,7 +27,7 @@
+ 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+ 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+ 			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+-			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="1189573167678144698" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
++			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="-1435354527064474269" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+ 				<language-scope id="org.eclipse.cdt.core.gcc"/>
+ 				<language-scope id="org.eclipse.cdt.core.g++"/>
+ 			</provider>
+@@ -38,7 +38,7 @@
+ 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+ 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+ 			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+-			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="1189573167678144698" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
++			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="-1435354527064474269" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+ 				<language-scope id="org.eclipse.cdt.core.gcc"/>
+ 				<language-scope id="org.eclipse.cdt.core.g++"/>
+ 			</provider>
+@@ -49,7 +49,7 @@
+ 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+ 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+ 			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+-			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="1189573167678144698" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
++			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="-1435354527064474269" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+ 				<language-scope id="org.eclipse.cdt.core.gcc"/>
+ 				<language-scope id="org.eclipse.cdt.core.g++"/>
+ 			</provider>
+@@ -60,7 +60,7 @@
+ 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+ 			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+ 			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+-			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="1189573167678144698" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
++			<provider class="org.eclipse.cdt.internal.build.crossgcc.CrossGCCBuiltinSpecsDetector" console="false" env-hash="-1435354527064474269" id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT Cross GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+ 				<language-scope id="org.eclipse.cdt.core.gcc"/>
+ 				<language-scope id="org.eclipse.cdt.core.g++"/>
+ 			</provider>
+diff --git a/src/DuetNG/DueXn.cpp b/src/DuetNG/DueXn.cpp
+index 25e8969..211a787 100644
+--- a/src/DuetNG/DueXn.cpp
++++ b/src/DuetNG/DueXn.cpp
+@@ -88,7 +88,7 @@ namespace DuetExpansion
+ 
+ 			// Set up the interrupt on any input change
+ 			dueXnInputMask = stopBits | AllGpioBits;
+-			dueXnExpander.enableInterruptMultiple(dueXnInputMask, INTERRUPT_MODE_CHANGE);
++			dueXnExpander.enableInterruptMultiple(dueXnInputMask, CHANGE /* INTERRUPT_MODE_CHANGE */);
+ 
+ 			// Clear any initial interrupts
+ 			(void)dueXnExpander.interruptSource(true);
+diff --git a/src/DuetNG/SX1509.cpp b/src/DuetNG/SX1509.cpp
+index 9b7a54d..98db79d 100644
+--- a/src/DuetNG/SX1509.cpp
++++ b/src/DuetNG/SX1509.cpp
+@@ -531,13 +531,13 @@ void SX1509::enableInterruptMultiple(uint16_t pins, uint8_t riseFall)
+ 	uint8_t sensitivity;
+ 	switch (riseFall)
+ 	{
+-	case INTERRUPT_MODE_CHANGE:
++	case CHANGE /* INTERRUPT_MODE_CHANGE */:
+ 		sensitivity = 0b11;
+ 		break;
+-	case INTERRUPT_MODE_FALLING:
++	case FALLING /* INTERRUPT_MODE_FALLING */:
+ 		sensitivity = 0b10;
+ 		break;
+-	case INTERRUPT_MODE_RISING:
++	case RISING /* INTERRUPT_MODE_RISING */:
+ 		sensitivity = 0b01;
+ 		break;
+ 	default:
+diff --git a/src/FilamentMonitors/FilamentMonitor.cpp b/src/FilamentMonitors/FilamentMonitor.cpp
+index 6445839..706cdcd 100644
+--- a/src/FilamentMonitors/FilamentMonitor.cpp
++++ b/src/FilamentMonitors/FilamentMonitor.cpp
+@@ -46,7 +46,7 @@ bool FilamentMonitor::ConfigurePin(GCodeBuffer& gb, const StringRef& reply, Inte
+ 		endstopNumber = endstop;
+ 		pin = p;
+ 		haveIsrStepsCommanded = false;
+-		if (interruptMode != INTERRUPT_MODE_NONE && !attachInterrupt(pin, InterruptEntry, interruptMode, this))
++		if (interruptMode != DEFAULT /* INTERRUPT_MODE_NONE */ && !attachInterrupt(pin, InterruptEntry, interruptMode, this))
+ 		{
+ 			reply.copy("unsuitable endstop number");
+ 			return true;
+diff --git a/src/FilamentMonitors/FilamentMonitor.h b/src/FilamentMonitors/FilamentMonitor.h
+index 1fa4416..b991811 100644
+--- a/src/FilamentMonitors/FilamentMonitor.h
++++ b/src/FilamentMonitors/FilamentMonitor.h
+@@ -11,6 +11,8 @@
+ #include "RepRapFirmware.h"
+ #include "MessageType.h"
+ 
++typedef uint32_t InterruptMode;
++
+ enum class FilamentSensorStatus : uint8_t
+ {
+ 	ok,
+diff --git a/src/FilamentMonitors/LaserFilamentMonitor.cpp b/src/FilamentMonitors/LaserFilamentMonitor.cpp
+index 7fd72e2..724ed80 100644
+--- a/src/FilamentMonitors/LaserFilamentMonitor.cpp
++++ b/src/FilamentMonitors/LaserFilamentMonitor.cpp
+@@ -40,7 +40,7 @@ void LaserFilamentMonitor::Reset()
+ // Configure this sensor, returning true if error and setting 'seen' if we processed any configuration parameters
+ bool LaserFilamentMonitor::Configure(GCodeBuffer& gb, const StringRef& reply, bool& seen)
+ {
+-	if (ConfigurePin(gb, reply, INTERRUPT_MODE_CHANGE, seen))
++	if (ConfigurePin(gb, reply, CHANGE /* INTERRUPT_MODE_CHANGE */, seen))
+ 	{
+ 		return true;
+ 	}
+diff --git a/src/FilamentMonitors/PulsedFilamentMonitor.cpp b/src/FilamentMonitors/PulsedFilamentMonitor.cpp
+index bbb92bc..676c2b0 100644
+--- a/src/FilamentMonitors/PulsedFilamentMonitor.cpp
++++ b/src/FilamentMonitors/PulsedFilamentMonitor.cpp
+@@ -39,7 +39,7 @@ void PulsedFilamentMonitor::Reset()
+ // Configure this sensor, returning true if error and setting 'seen' if we processed any configuration parameters
+ bool PulsedFilamentMonitor::Configure(GCodeBuffer& gb, const StringRef& reply, bool& seen)
+ {
+-	if (ConfigurePin(gb, reply, INTERRUPT_MODE_RISING, seen))
++	if (ConfigurePin(gb, reply, RISING /* INTERRUPT_MODE_RISING */, seen))
+ 	{
+ 		return true;
+ 	}
+diff --git a/src/FilamentMonitors/RotatingMagnetFilamentMonitor.cpp b/src/FilamentMonitors/RotatingMagnetFilamentMonitor.cpp
+index 1d378d8..6f1c28a 100644
+--- a/src/FilamentMonitors/RotatingMagnetFilamentMonitor.cpp
++++ b/src/FilamentMonitors/RotatingMagnetFilamentMonitor.cpp
+@@ -41,7 +41,7 @@ void RotatingMagnetFilamentMonitor::Reset()
+ // Configure this sensor, returning true if error and setting 'seen' if we processed any configuration parameters
+ bool RotatingMagnetFilamentMonitor::Configure(GCodeBuffer& gb, const StringRef& reply, bool& seen)
+ {
+-	if (ConfigurePin(gb, reply, INTERRUPT_MODE_CHANGE, seen))
++	if (ConfigurePin(gb, reply, CHANGE /* INTERRUPT_MODE_CHANGE */, seen))
+ 	{
+ 		return true;
+ 	}
+diff --git a/src/FilamentMonitors/SimpleFilamentMonitor.cpp b/src/FilamentMonitors/SimpleFilamentMonitor.cpp
+index 5956fa7..5478d38 100644
+--- a/src/FilamentMonitors/SimpleFilamentMonitor.cpp
++++ b/src/FilamentMonitors/SimpleFilamentMonitor.cpp
+@@ -17,7 +17,7 @@ SimpleFilamentMonitor::SimpleFilamentMonitor(unsigned int extruder, int type)
+ // Configure this sensor, returning true if error and setting 'seen' if we processed any configuration parameters
+ bool SimpleFilamentMonitor::Configure(GCodeBuffer& gb, const StringRef& reply, bool& seen)
+ {
+-	if (ConfigurePin(gb, reply, INTERRUPT_MODE_NONE, seen))
++	if (ConfigurePin(gb, reply, DEFAULT /* INTERRUPT_MODE_NONE */, seen))
+ 	{
+ 		return true;
+ 	}
+diff --git a/src/Heating/Sensors/DhtSensor.cpp b/src/Heating/Sensors/DhtSensor.cpp
+index 49e99d6..1d035a2 100644
+--- a/src/Heating/Sensors/DhtSensor.cpp
++++ b/src/Heating/Sensors/DhtSensor.cpp
+@@ -188,7 +188,7 @@ void DhtDataTransition(CallbackParameter)
+ 			// due to the fact that this messes with the stepping ISR
+ 			numPulses = 0;
+ 			lastPulseTime = 0;
+-			attachInterrupt(DhtDataPin, DhtDataTransition, INTERRUPT_MODE_CHANGE, nullptr);
++			attachInterrupt(DhtDataPin, DhtDataTransition, CHANGE /* INTERRUPT_MODE_CHANGE */, nullptr);
+ 
+ 			// Wait for the next operation to complete
+ 			lastOperationTime = millis();
+diff --git a/src/Networking/ESP8266WiFi/WiFiInterface.cpp b/src/Networking/ESP8266WiFi/WiFiInterface.cpp
+index 235f7a8..e01ea6f 100644
+--- a/src/Networking/ESP8266WiFi/WiFiInterface.cpp
++++ b/src/Networking/ESP8266WiFi/WiFiInterface.cpp
+@@ -17,6 +17,8 @@
+ #include "Libraries/General/IP4String.h"
+ #include "WiFiSocket.h"
+ 
++#include "MessageFormats.h"
++
+ static_assert(SsidLength == SsidBufferLength, "SSID lengths in NetworkDefs.h and MessageFormats.h don't match");
+ 
+ // Define exactly one of the following as 1, the other as zero
+@@ -123,7 +125,7 @@ static void EspTransferRequestIsr(CallbackParameter)
+ 
+ static inline void EnableEspInterrupt()
+ {
+-	attachInterrupt(EspDataReadyPin, EspTransferRequestIsr, INTERRUPT_MODE_RISING, nullptr);
++	attachInterrupt(EspDataReadyPin, EspTransferRequestIsr, RISING /* INTERRUPT_MODE_RISING */, nullptr);
+ }
+ 
+ static inline void DisableEspInterrupt()
+diff --git a/src/Platform.cpp b/src/Platform.cpp
+index 43dcb2c..e2940c0 100644
+--- a/src/Platform.cpp
++++ b/src/Platform.cpp
+@@ -2024,7 +2024,7 @@ void Platform::InitialiseInterrupts()
+ 	// Interrupt for 4-pin PWM fan sense line
+ 	if (coolingFanRpmPin != NoPin)
+ 	{
+-		attachInterrupt(coolingFanRpmPin, FanInterrupt, INTERRUPT_MODE_FALLING, nullptr);
++		attachInterrupt(coolingFanRpmPin, FanInterrupt, FALLING /* INTERRUPT_MODE_FALLING */, nullptr);
+ 	}
+ 
+ 	// Tick interrupt for ADC conversions
+diff --git a/src/RepRapFirmware.h b/src/RepRapFirmware.h
+index b44149a..3c0dc6e 100644
+--- a/src/RepRapFirmware.h
++++ b/src/RepRapFirmware.h
+@@ -30,6 +30,8 @@ Licence: GPL
+ #include "ecv.h"
+ #include "Core.h"
+ 
++typedef uint32_t InterruptMode;
++
+ typedef uint16_t PwmFrequency;		// type used to represent a PWM frequency. 0 sometimes means "default".
+ 
+ #include "Configuration.h"
+diff --git a/src/Version.h b/src/Version.h
+index 09aa937..34a3529 100644
+--- a/src/Version.h
++++ b/src/Version.h
+@@ -9,13 +9,13 @@
+ #define SRC_VERSION_H_
+ 
+ #ifndef VERSION
+-# define VERSION "1.21"
++# define VERSION "1M.22-RC1"
+ #endif
+ 
+ #ifndef DATE
+-# define DATE "2018-03-21"
++# define DATE "2018-04-24"
+ #endif
+ 
+-#define AUTHORS "reprappro, dc42, chrishamm, t3p3, dnewman"
++#define AUTHORS "reprappro, dc42, chrishamm, t3p3, dnewman, 3dmatt, printm3d"
+ 
+ #endif /* SRC_VERSION_H_ */
