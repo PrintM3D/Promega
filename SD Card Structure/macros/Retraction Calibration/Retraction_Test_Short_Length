@@ -1,0 +1,17 @@
+M120
+M83
+
+; Extrusion Speed
+G0 F120
+
+; Extrusion 
+G0 E25
+
+; Retraction 
+G0 E-6.4 F1320
+
+G4 P500
+
+G0 E4.8 F1320
+
+M121

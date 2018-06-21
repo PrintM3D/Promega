@@ -1,0 +1,5 @@
+; Set to origin tool
+T0
+
+; Carry out mesh probing
+G29
