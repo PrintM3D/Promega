@@ -2,7 +2,7 @@
 ; called to perform automatic bed compensation via G32
 
 ; Heat bed and nozzle, allow bed to reach temperature before continuing
-M104 T0 S150
+M104 T1 S150
 M190 S60 ; Change depending on print bed temperature
 
 ; Clear any bed transform
