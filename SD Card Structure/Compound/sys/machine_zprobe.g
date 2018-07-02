@@ -12,21 +12,23 @@
 ; To select which probe to use, comment / uncomment ONE of the two M558 lines below.
 
 ; Determine the Probe Z Offset:
-; 1. Home your printer
-; 2. Heat the bed to 60C and the nozzle to 150C
-; 3. Disable bed leveling with G29 S2, otherwise this can conflict with your new Z-probe offset
-; 4. Move the head near the center with G1 X200 Y200
-; 5. Move the bed near the nozzle with G1 Z20
-; 6. Deploy the probe if necessary
-; 7. Get the Z Probe value with G30 S-1
-; 8. Note the printer Z value in the Web UI and update it in the G31 Z parameter below
-; 9. Retract the Z probe if necessary
-; 10. Enable bed leveling compensation again with G29 S1
+;  1. Heat the bed to 60C and the nozzle to 150C
+;  2. Move the head near the center with G1 X200 Y200
+;  3. Move the bed near the nozzle with G1 Z20
+;  4. Disable the bed mesh with G29 S2
+;  5. Move the bed in small steps so it just touches the nozzle, 1mm steps first, then 0.1mm steps
+;  6. Set the Z0 position with G92 Z0
+;  7. Move the bed back to Z20, with G1 Z20
+;  8. Deploy the probe if necessary
+;  9. Get the Z Probe value with G30 S-1
+; 10. Note the Z value in the Web UI and update it in the G31 Z parameter below
+; 11. Put the Z probe away if necessary
 
 ; Toggle by uncommenting, depending on preference
-; M558 P1 X0 Y0 Z1 H5 F120 T5000 	; Set Z probe type -- Enable IR_PROBE
-M558 P4 I1 X0 Y0 Z1 H5 F100 T5000 	; Set Z probe type -- Enable LIMIT SWITCH
+; M558 P1 X0 Y0 Z1 H5 F120 T5000 ; Set Z probe type -- ENABLE IR_PROBE
+M558 P4 I1 X0 Y0 Z1 H5 F100 T5000 ; Set Z probe type -- ENABLE LIMIT SWITCH
 
-; Remember to update your Z-probe offset with the Z parameter below: http://promega.printm3d.com/books/user-manual/page/bed-leveling-probing#bkmrk-the-limit-switch-pro
-; Old value G31 P999 X-40 Y28.5 Z0.925 ; Set Z probe (limit switch) trigger value, offset
+; Remember to update your Z-probe offset with the Z parameter below
+; Follow this guide or the instructions above: http://promega.printm3d.com/books/user-manual/page/bed-leveling-probing#bkmrk-the-limit-switch-pro
+; G31 P450 X30.4 Y30.7 Z10 					; Set Z probe (IR) trigger value and offset
 G31 P999 X-43 Y25 Z0.925 ; Set Z probe (limit switch) trigger value, offset
