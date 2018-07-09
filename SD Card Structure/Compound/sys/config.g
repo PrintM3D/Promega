@@ -39,8 +39,8 @@ M84 S1 ; Set idle timeout
 
 ; --- SECTION: HEATERS, BED & THERMISTOR ---
 ; H0 is bed
-; H1 is heater
-; H2 is heater
+; H1 is left heater
+; H2 is right heater
 
 M570 H0 P25 T30 ; Allow heater to be off by as much as 30C for 25 seconds
 M570 H1 P15 T30 ; Allow heater to be off by as much as 30C for 15 seconds
@@ -52,6 +52,7 @@ M307 H0 A78.9 C265.2 D9.5 S1.00 V24.0 B0 ; Forcing heated bed PID control after 
 M307 H1 A241.4 C104.5 D3.5 S1.00 V23.9 B0 ; Set PID values use M303 auto-tune calibration settings
 M302 P1 ; Allow Cold extrudes
 M98 Pmachine_maxtemp.g ; set bed and extruder max temperatures
+
 ; --- SECTION: FANS ( ) ---
 
 M106 P0 S0 I0 F4 H-1 L0.3; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off, Minimum fan value 0.3, Speed 100%
@@ -60,22 +61,11 @@ M106 P2 S0 I0 F4 H-1 L0.3; Set fan 1 value, PWM signal inversion and frequency. 
 
 ; --- SECTION: TOOLS (TOOL DEFINITION SECTION) --- 
 
-; Comment: H0 is typically heated bed
-; Comment: D0 is the first driver after movement (X, Y and Z) drives, which is extruder
+; Comment: Remember! H0 is the heated bed!
+; Comment: D0 is the first driver after movement (X, Y and Z) drives, which is left extruder
+; D1 is right extruder
 
-; Compound Nozzle Tools
-; Mixing Tool T0
-M563 P0 D0:1 H1 F2 S"Mixing" ; Define mixing tool
-G10 P0 X0 Y0 Z0 							; Set axis offsets
-G10 P0 R0 S0 								; Set active (S0) & standby temp (R0) at 0.
-M567 P0 E0.5:0.5 ; Set tool mix ratios for extruder
-M568 P0 S1 ; Turn on tool mixing for the extruder
-; Right Only T1
-M563 P1 D0 H1 F2 S"Mixing as Single Right"; mixing nozzle only using right motor
-M568 P1 S0 ; Turn off tool mixing
-; Left Only T2
-M563 P2 D1 H1 F2 S"Mixing as Single Left" ; mixing nozzle only using left motor
-M568 P2 S0 ; Turn off tool mixing
+M98 Pmachine_compound_tools.g ; Define compound tools
 
 T0 ; Automatic tool select
 

@@ -2,6 +2,7 @@
 ; June 29, 2018
 
 ; Set the machine name and IP address in here
+; Follow http://promega.printm3d.com/books/user-manual/page/network-setup, for more help
 
 M111 S0                       ; Debugging off
 M550 PPromega                 ; Set machine name, type promega/ in your browser!
