@@ -1,9 +1,15 @@
-# Promega
 
-This Repository will contain:
--Tracking of issues in a public forum, with issues upvoting, as a partial replacement for private email ticketing.
--Official slicer and SD folder releases
--Community supported slicer/SD folders
--It may also get an updated Wiki, and 3D printed files, in time.
+## Promega
 
-To find pointers to all M3D documentation and sites please visit Launchpad.printm3d.com
+> A curated repo of the official settings and files for the Promega 3D Printer.
+
+## This repository
+
+* [Slicer_Profiles](https://github.com/PrintM3D/Promega/tree/devel/Slicer_Profiles) - Promega Slider Profiles
+* [SD Card Structure](https://github.com/PrintM3D/Promega/tree/devel/SD%20Card%20Structure) - Official SD folder releases
+
+## Links
+
+* [LaunchPad](http://launchpad.printm3d.com) - Promega page where you will find a link to the most important resources. 
+* [Promega Docs](http://promega.printm3d.com) - Official Promega Documentation. 
+
