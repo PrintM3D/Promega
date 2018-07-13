@@ -3,7 +3,7 @@
 
 > A curated repo of the official settings and files for the Promega 3D Printer.
 
-## This repository
+## This Repository
 
 * [Slicer_Profiles](https://github.com/PrintM3D/Promega/tree/devel/Slicer_Profiles) - Promega Slider Profiles
 * [SD Card Structure](https://github.com/PrintM3D/Promega/tree/devel/SD%20Card%20Structure) - Official SD folder releases
