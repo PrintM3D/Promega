@@ -9,7 +9,7 @@ M564 H0 S0
 
 ; Turn off bed leveling during homing
 G29 S2 ; Does the same as M561!
-
+G29 S2 ; Do it twice because once just isn't enough
 
 ; Switch to Origin Tool
 T0

@@ -3,7 +3,7 @@
 
 ; These values define how many steps make 1mm of movement.
 ; Please note, only change the calibration if the measurements are always
-; off by the same amount, no matter what the material, layer heigh or print speed.
+; off by the same amount, no matter what the material, layer height or print speed.
 
 ; Here is a link on how to properly calibrate your step values.
 ; http://print.theporto.com/posts/how-to-calibrate-your-3d-printer-for-accurate-printing/

@@ -1,6 +1,6 @@
 ===============================================================================
 ====                                                                       ====
-====            ProMega Machine Configuration Instructions v1.0            ====
+====            ProMega Machine Configuration Instructions v1.1            ====
 ====                                                                       ====
 ====    A colaboration of: ShadowHawk, talryyn, Rodney, Lmx and others.    ====
 ====                                                                       ====
@@ -28,6 +28,7 @@ machine_axisdimension.g  Sets the minimum and maximum extent of the three axis
 machine_axissteps.g      Sets the step size for the three axis
 machine_bedmesh.g        Defines the size and density of the bed mesh
 machine_xxx_tools.g      Defines the tools for the compound or K'tana extruder, depends on file
+machine_endstoptypes.g   Defines the type of end stops used in the printer
 machine_extruderstep.g   Sets the step size for the extruders
 machine_maxtemp.g        Sets the maximum temperatures for the bed and hot ends
 machine_steppercurrent.g Sets the motor and idle currents

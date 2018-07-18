@@ -10,7 +10,7 @@
 
 ; Instructions
 ; 1. Home All
-; 2. Disable the bed mesh with G29 S2
+; 2. Disable the bed mesh with G29 S2 twice
 ; 3. Run G1 X200 Y200 Z20 F1500
 ; 4. Manually jog the bed up using the <Z-10 to <Z-0.1 using smaller steps as you get close to the nozzle
 ; 5. Have bed touching the nozzle, do not leave a gap.  If you can't reach the nozzle, estimate how far the
@@ -30,7 +30,7 @@
 
 ;    If your Z value was 0, congratulations, no changes to this file are needed.
 
-; Set this location as Z = 376.4mm (Normally the Default Factory Number)
 ; 8. Re-enable your bed leveling compensation with G29 S1
 
+; Set this location as Z = 376.4mm (Normally the Default Factory Number for Compound)
 G92 Z376.4 ; With glass bed and Compound

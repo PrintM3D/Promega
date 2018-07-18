@@ -12,8 +12,10 @@ M109 T1 S150 ; wait for the nozzle to read 150C
 M109 T2 S150 ; wait for the nozzle to read 150C
 
 ; Clear any bed transform
-M561
-G29 S2
+G29 S2 ; Does the same as M561!
+G29 S2 ; Do it twice cause once is not enough
+
+M98 Pmachine_bedmesh.g ; configure the bed mesh
 
 ; Mesh Bed Leveling -> Mesh defined in config.g
 G29 S0 ; Run the bed leveling, and enable compensation

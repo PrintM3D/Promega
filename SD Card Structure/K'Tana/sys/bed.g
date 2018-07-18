@@ -2,11 +2,20 @@
 ; called to perform automatic bed compensation via G32
 
 ; Heat bed and nozzle, allow bed to reach temperature before continuing
-M104 T0 S150
-M190 S60 ; Change depending on print bed temperature
+M140 S60 ; set the bed to 60C, change depending on your desired bed temp
+M190 S60 ; wait for the bed to reach 60C, change depending on your desired bed temp
+M104 T0 S150 ; set the nozzle to 150C
+M104 T1 S150 ; set the nozzle to 150C
+M104 T2 S150 ; set the nozzle to 150C
+M109 T0 S150 ; wait for the nozzle to read 150C
+M109 T1 S150 ; wait for the nozzle to read 150C
+M109 T2 S150 ; wait for the nozzle to read 150C
 
 ; Clear any bed transform
 G29 S2 ; Does the same as M561!
+G29 S2 ; Do it twice cause once is not enough
+
+M98 Pmachine_bedmesh.g ; configure the bed mesh
 
 ; Mesh Bed Leveling -> Mesh defined in config.g
 G29 S0 ; Run the bed leveling, and enable compensation
