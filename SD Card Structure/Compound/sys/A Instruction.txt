@@ -47,4 +47,6 @@ Step 1 needs to be done on a computer with an SD card reader and a text editor t
 5. Run a G32 command to calculate the bed mesh
 6. Repeat from step 3 and recheck values if necessary
 
+If the UI shows all the heaters at 2000C, go into the file machine_compound_tools.g and change the H2 to H1 in the three M563 commands in that file.  Then restart the printer (make sure the bed is homed).
+
 At this point in time, your printer should be ready for the first test print.
