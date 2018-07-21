@@ -38,12 +38,13 @@ machine_zprobe.g         Defines the type of Z probe used and its offsets
 
 Initial setup:
 
-Step 1 needs to be done on a computer with an SD card reader and a text editor the rest will be done in the System Editor in the Settings section of the Web UI.
+Step 1 needs to be done on a computer with an SD card reader and a text editor the rest will be done in the System Editor in the Settings section of the Web UI.  Follow the instructions in the individual machine_ files mentioned below.
 
 1. Set the machine name and IP address in machine_access.g
 2. Set the Z probe type and offsets in machine_zprobe.g
 3. Set the Z height of the Z end stop in machine_zendstop.g
-4. Run a G32 command to calculate the bed mesh
-5. Repeat and recheck values if necessary
+4. Deploy Z Probe
+5. Run a G32 command to calculate the bed mesh
+6. Repeat from step 3 and recheck values if necessary
 
 At this point in time, your printer should be ready for the first test print.
