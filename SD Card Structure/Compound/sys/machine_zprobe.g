@@ -15,7 +15,7 @@
 ;  1. Heat the bed to 60C and the nozzle to 150C
 ;  2. Move the head near the center with G1 X200 Y200
 ;  3. Move the bed near the nozzle with G1 Z20
-;  4. Disable the bed mesh with G29 S2
+;  4. Disable the bed mesh with G29 S2, do this twice
 ;  5. Move the bed in small steps so it just touches the nozzle, 1mm steps first, then 0.1mm steps
 ;  6. Set the Z0 position with G92 Z0
 ;  7. Move the bed back to Z20, with G1 Z20

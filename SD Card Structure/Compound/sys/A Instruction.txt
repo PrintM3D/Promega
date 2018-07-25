@@ -38,14 +38,13 @@ machine_zprobe.g         Defines the type of Z probe used and its offsets
 
 Initial setup:
 
-Step 1 needs to be done on a computer with an SD card reader and a text editor the rest will be done in the System Editor in the Settings section of the Web UI.  Follow the instructions in the individual machine_ files mentioned below.
+Step 1 needs to be done on a computer with an SD card reader and a text editor the rest will be done through macros in the Printer Setup folder.
 
 1. Set the machine name and IP address in machine_access.g
-2. Set the Z probe type and offsets in machine_zprobe.g
-3. Set the Z height of the Z end stop in machine_zendstop.g
-4. Deploy Z Probe
-5. Run a G32 command to calculate the bed mesh
-6. Repeat from step 3 and recheck values if necessary
+2. Run the macro 'Printer Setup -> _1_Calibrate_Z_Probe.g'
+3. Run the macro 'Printer Setup -> _2_Set_Z_Endstop_Height.g'
+4. Run the macro 'Printer Setup -> _3_Mesh_Bed.g'
+5. Repeat from step 3 and recheck values if necessary
 
 If the UI shows all the heaters at 2000C, go into the file machine_compound_tools.g and change the H2 to H1 in the three M563 commands in that file.  Then restart the printer (make sure the bed is homed).
 
