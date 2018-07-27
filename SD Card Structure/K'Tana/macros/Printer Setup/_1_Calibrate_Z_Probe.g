@@ -49,3 +49,9 @@ G4 P401
 M291 P"Retract the Z Probe if needed. Press OK to continue." S2
 M291 P"Record the Z axis value displayed in the Machine Status and set the G31 Z value in machine_zprobe.g to the value recorded." S2
 M291 P"After the file has been saved run the _2_Set_Z_Endstop_Height.g macro" S2
+M291 P"These messages are also displayed on the g-code console screen." S2
+
+; Display commands on the console screen
+
+M118 S"After the file has been saved run the _2_Set_Z_Endstop_Height.g macro" P0
+M118 S"Record the Z axis value displayed in the Machine Status and set the G31 Z value in machine_zprobe.g to the value recorded." P0

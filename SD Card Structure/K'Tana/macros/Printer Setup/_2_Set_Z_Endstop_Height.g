@@ -47,3 +47,20 @@ M291 P"If the recorded Z value is - (negative), ADD it to the current Z value." 
 M291 P"If the recorded Z value is + (positive), SUBTRACT it from the current Z value." S2
 M291 P"Edit machine_axisdimension.g and set max Z to the next whole number above the new Z end stop set in machine_zendstop.g." S2
 M291 P"After both files are saved run the _2_Set_Z_Endstop_Height.g macro again until no correction is needed" S2
+M291 P"These messages are also displayed on the g-code console screen." S2
+
+; Display commands on the console screen
+
+M118 S"After both files are saved run the _2_Set_Z_Endstop_Height.g macro again until no correction is needed.. End of Message..." P0
+G4 P1000
+M118 S"Edit machine_axisdimension.g and set max Z to the next whole number above the new Z end stop set in machine_zendstop.g" P0
+G4 P1000
+M118 S"If the recorded Z value is + (positive), SUBTRACT it from the current Z value" P0
+G4 P1000
+M118 S"If the recorded Z value is - (negative), ADD it to the current Z value" P0
+G4 P1000
+M118 S"Otherwise set the G92 Z value in machine_zendstop.g" P0
+G4 P1000
+M118 S"If the value is 0, then skip to running the _3_Mesh_Bed.g macro" P0
+G4 P1000
+M118 S"Record the Z axis value displayed in the Machine Status" P0
