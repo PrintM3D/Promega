@@ -46,6 +46,7 @@ M291 P"Otherwise set the G92 Z value in machine_zendstop.g." S2
 M291 P"If the recorded Z value is - (negative), ADD it to the current Z value." S2
 M291 P"If the recorded Z value is + (positive), SUBTRACT it from the current Z value." S2
 M291 P"Edit machine_axisdimension.g and set max Z to the next whole number above the new Z end stop set in machine_zendstop.g." S2
+M291 P"After both files are saved run the _2_Set_Z_Endstop_Height.g macro again until no correction is needed" S2
 M291 P"These messages are also displayed on the g-code console screen." S2
 
 ; Display commands on the console screen
