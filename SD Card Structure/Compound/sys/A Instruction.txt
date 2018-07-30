@@ -36,6 +36,17 @@ machine_stepperspeed.g   Sets the accelerations, max linear speeds and speed cha
 machine_zendstop.g       Sets the Z height of the Z end stop
 machine_zprobe.g         Defines the type of Z probe used and its offsets
 
+Print Scripts:
+There are two scripts in the sys folder that make starting and stopping a print more convenient.
+These two scripts can be modified by the user to accommodate their personal taste of what should happen before and after a print job.
+
+print_startcode.g        This script should be called by the slicer on start of a print job.
+print_stopcode.g         This script should be called by the slicer at the end of a print job.
+
+To call those scripts from the slicer, use the following gcode commands:
+M98 Pprint_startgcode.g
+M98 Pprint_stopgcode.g
+
 Initial setup:
 
 Step 1 needs to be done on a computer with an SD card reader and a text editor the rest will be done through macros in the Printer Setup folder.
