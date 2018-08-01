@@ -1,0 +1,9 @@
+In my setup I'm using a custom cut 16 3/8" x 16 3/8" x 1/4" mirror with half inch radius corners.
+The mirror ended up being 5.99mm thick which is too thick for the regular bed clips.
+
+I designed these clips to go between the bedframe and the heat bed and hold the mirror in place on top.
+The mirror is pretty heavy as it is so this is really just a little bit of additional piece of mind.
+
+I printed the clips in Black Inland PETG with 0.5mm nozzle, 0.25mm layer height and 30mm/s speed.
+
+Simplify3D factory provided for convenience
