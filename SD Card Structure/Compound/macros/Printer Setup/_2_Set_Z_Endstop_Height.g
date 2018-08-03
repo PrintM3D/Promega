@@ -3,9 +3,7 @@ M291 P"Do you want to set the Z endstop height?" S3
 M291 P"Setting Z endstop height, this will home the printer, heat the bed and nozzle and then give you further instructions." S0
 
 M140 S60 ; Start heating bed to 60c
-G10 P0 S150 ;turn on extruder
-G10 P1 S150 ;turn on extruder
-G10 P2 S150 ;turn on extruder
+M98 P"/macros/Printer Setup/Helpers/_Heat_Extruders.g"
 
 G28 ; Home all
 G28 Z ; Home z
