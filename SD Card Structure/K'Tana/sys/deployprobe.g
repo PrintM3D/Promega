@@ -1,4 +1,4 @@
-; Probe deployment routine, not used for ProMega
+; Probe deployment routine: Lower bed away from nozzle, and prompt for probe deployment
 
 G1 Z75 S1 ; lower bed by 75mm to give room for deploying probe
 
