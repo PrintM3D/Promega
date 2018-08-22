@@ -7,4 +7,4 @@
 ; http://print.theporto.com/posts/how-to-calibrate-your-3d-printer-extruder-steps/
 
 M92 E180.4:180.4 ; Extruder Steps/mm
-M350 E128:128    ; Setting microstepping to 1/128.
+M350 E16:16    ; Setting microstepping to 1/16.
