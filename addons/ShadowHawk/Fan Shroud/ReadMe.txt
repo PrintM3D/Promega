@@ -5,7 +5,8 @@ Please note, to install this fan shroud, you have to turn your heat block by 90 
 
 The cable for the part fan needs to be removed from the front cable assembly.  You then have to pull a bit more of the cable through the cable chain (there is plenty of slack at the board end).  Refer to the photos on how the part fan cable should be routed and how the plug fits into the fan shroud.
 
-This was modeled in Fusion 360 and I included the Fusion 360 archive file in the CAD folder together with just about any other format Fusion 360 can export.  The STL is in the folder STL (shocking).  The Simplify3D folder has a factory file in it.  The speed is set to 20mm/s, please adjust to what ever your printer is capable of printing.
+This was modeled in Fusion 360 and I included the Fusion 360 archive file in the CAD folder together with just about any other format Fusion 360 can export.  The STL is in the folder STL (shocking).  The Simplify3D folder has a factory file in it.  The speed is set to 30mm/s, please adjust to what ever your printer is capable of printing.
 The GCode folder has two files in it.  One is using Tool 0, the other one is modified to use the mixing tool with a linear gradient between the right and the left extruder.
 
+This version now fits under the front metal edge.  You will need to adjust your Max Y in machine_axisdimension.g from 388 down to 372 due to the radius at the front of the case, BUT, you gain some cooling for your extruder steppers in return.
 
