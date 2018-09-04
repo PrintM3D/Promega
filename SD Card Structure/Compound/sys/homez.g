@@ -1,9 +1,9 @@
 ; homez.g
 ; called to home the Z axis
-;
+; updated September 4, 2018
 
 ; ============= PRE-HOMING =====================
-
+M913 Z60 ; drop Z motor currents to 60%
 ; Ignore Machine boundaries
 M564 H0 S0
 
@@ -42,6 +42,8 @@ G90
 
 ; Re-enable mesh leveling
 G29 S1
+
+M913 Z100 ; Z motor currents to 100%
 
 M98 Pmachine_axisdimension.g ; Set Axes Limits
 

@@ -1,11 +1,14 @@
 ; homex.g
 ; called to home the X axis
-;
+; updated September 4, 2018
 
 ; same as homey.g because of coreXY
 ; Front left corner is (0,0)
 
 ; ============= PRE-HOMING =====================
+
+M913 X60 ; drop X motor currents to 60%
+M913 Y60 ; drop Y motor currents to 60%
 
 ; Ignore Machine boundaries
 M564 H0 S0
@@ -63,6 +66,9 @@ G90
 
 ; Re-enable mesh leveling
 G29 S1
+
+M913 X100                    ; X motor currents back to 100%
+M913 Y100                    ; Y motor currents back to 100%
 
 M98 Pmachine_axisdimension.g ; Set Axes Limits
 
