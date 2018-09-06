@@ -2,5 +2,7 @@
 
 G90 ; Ensure we're absolute
 
-; Move to a position off of all axis
-G0 X200 Y200 Z380 S1
+; Move to a position off of XY axis
+G0 X200 Y200
+
+M98 Phomez.g ; Run the homez.g file
