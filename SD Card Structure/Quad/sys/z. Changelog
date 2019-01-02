@@ -1,0 +1,18 @@
+; Changelog
+
+; 9/26/2018:
+
+; Quad Development:
+; 1. Added a new tool file: machine_quad_tool.g
+; 2. Switched tool macro/file to activate "machine_quad_tool.g"
+; 3. Adjusted tool property (M563 ...) for quad in machine_quad_tool.g.
+; 3. Adjusted motor orientation in machine_quad_tool.g
+; 4. Adjusted motor current in machine_quad_tool.g
+; 5. Adjusted motor steps in machine_quad_tool.g
+; 7. Adjusted motor motion settings format to E# in machine_stepperspeed.g
+; 7a. NOTE: This had to be done because it only changed the first two extruder values, by using the E#:# format. This 
+;           only changed extruder E0 and E1, not E2 or E3 (which stayed) as default. 
+;           THIS NEEDS TO BE REWRITTEN AS E# in the master promega SD Card Content. The E# format changes all extruder values.
+; 8. Adjusted mixing ratio to quad default (25% each).
+
+; Edited by Eric

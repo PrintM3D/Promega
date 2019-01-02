@@ -1,0 +1,62 @@
+===============================================================================
+====                                                                       ====
+====            ProMega Machine Configuration Instructions v1.1            ====
+====                                                                       ====
+====    A colaboration of: ShadowHawk, talryyn, Rodney, Lmx and others.    ====
+====                                                                       ====
+===============================================================================
+
+This document explains how to set the correct configurations for this machine.
+
+The sys folder contains a set of files, most of them should not be modified.
+Some of them are machine generated, like for example the heightmap.csv file.
+Here is the list of files the user can change and an overall guide on how to
+configure those files. Each of those files has detailed instructions in them
+under which circumstances and how that particular file has to be modified.
+
+All the files the user should ever have to change start with the prefix machine_.
+All other files can be changed, but should not be.
+
+More in-depth guides and walkthroughs can be found on the Promega Docs website:
+
+http://promega.printm3d.com/
+
+File			         Description
+A Instruction.txt        This document
+machine_access.g         Handles the name of the machine as well as its IP address
+machine_axisdimension.g  Sets the minimum and maximum extent of the three axis
+machine_axissteps.g      Sets the step size for the three axis
+machine_bedmesh.g        Defines the size and density of the bed mesh
+machine_xxx_tools.g      Defines the tools for the compound or K'tana extruder, depends on file
+machine_endstoptypes.g   Defines the type of end stops used in the printer
+machine_extruderstep.g   Sets the step size for the extruders
+machine_maxtemp.g        Sets the maximum temperatures for the bed and hot ends
+machine_steppercurrent.g Sets the motor and idle currents
+machine_stepperspeed.g   Sets the accelerations, max linear speeds and speed changes
+machine_zendstop.g       Sets the Z height of the Z end stop
+machine_zprobe.g         Defines the type of Z probe used and its offsets
+
+Print Scripts:
+There are two scripts in the sys folder that make starting and stopping a print more convenient.
+These two scripts can be modified by the user to accommodate their personal taste of what should happen before and after a print job.
+
+print_startcode.g        This script should be called by the slicer on start of a print job.
+print_stopcode.g         This script should be called by the slicer at the end of a print job.
+
+To call those scripts from the slicer, use the following gcode commands:
+M98 Pprint_startgcode.g
+M98 Pprint_stopgcode.g
+
+Initial setup:
+
+Step 1 needs to be done on a computer with an SD card reader and a text editor the rest will be done through macros in the Printer Setup folder.
+
+1. Set the machine name and IP address in machine_access.g
+2. Run the macro 'Printer Setup -> _1_Calibrate_Z_Probe.g'
+3. Run the macro 'Printer Setup -> _2_Set_Z_Endstop_Height.g'
+4. Run the macro 'Printer Setup -> _3_Mesh_Bed.g'
+5. Repeat from step 3 and recheck values if necessary
+
+If the UI shows all the heaters at 2000C, go into the file machine_compound_tools.g and change the H2 to H1 in the three M563 commands in that file.  Then restart the printer (make sure the bed is homed).
+
+At this point in time, your printer should be ready for the first test print.
