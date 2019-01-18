@@ -81,4 +81,4 @@ M572 D0:1 S0.07 ; Extruder Pressure Advance
 M98 Pmachine_corexy_motion_settings.g ; Activates custom motion setup (max speed, max accel, jerk)
 M98 Pmachine_retraction_settings.g ; Activates custom firmware retraction settings
 
-M98 Pqc.g; Activate QC sequence
+;M98 Pqc.g; Activate QC sequence

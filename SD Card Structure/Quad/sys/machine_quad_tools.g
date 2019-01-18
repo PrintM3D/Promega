@@ -7,7 +7,6 @@ M563 P0 D0:1:2:3 H1 F1 S"Quad" ; Define mixing tool
 G10 P0 X0 Y0 Z0 ; Set axis offsets
 G10 P0 R0 S0 ; Set active (S0) & standby temp (R0) at 0.
 M567 P0 E0.25:0.25:0.25:0.25 ; Set tool mix ratios for extruder
-;M568 P0 S1 ; Turn on tool mixing for the extruder
 
 ;Motor Directions
 M569 P3 S0 V0 ; E0 / Driver 3 goes forwards, Port 3
