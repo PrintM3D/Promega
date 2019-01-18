@@ -11,4 +11,4 @@
 ; if the Z end stop was 377.2, max Z needs to be 378 etc.
 
 M208 X0 Y0 Z-0.5 S1    ; Set axis minima
-M208 X383 Y388 Z377 S0 ; Set axis maxima
+M208 X375 Y387 Z342 S0 ; Set axis maxima
