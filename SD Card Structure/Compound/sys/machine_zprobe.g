@@ -1,4 +1,4 @@
-; machine_zprobe.g
+; machine_probe.g
 ; June 29, 2018
 
 ; This document tells the printer which Z probe to use and what the offsets of that probe are.

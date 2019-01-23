@@ -1,14 +1,11 @@
 ; homex.g
 ; called to home the X axis
-; updated September 4, 2018
+; October 4, 2018
 
 ; same as homey.g because of coreXY
 ; Front left corner is (0,0)
 
 ; ============= PRE-HOMING =====================
-
-M913 X60 ; drop X motor currents to 60%
-M913 Y60 ; drop Y motor currents to 60%
 
 ; Ignore Machine boundaries
 M564 H0 S0
@@ -36,8 +33,8 @@ G0 Y-6 F1500
 ; Slow advance to trigger limit switch
 G0 Y10 F120 S1
 
-; Set this location as Y = 390mm
-G92 Y390
+; Set this location as Y = 384mm
+G92 Y384
 
 ; Move the gantry slightly away from back of printer, to allow travel past the bolt mounting the gantry bracket
 G0 Y-5 F1200
@@ -53,8 +50,8 @@ G0 X-6 F1500
 ; Slow advance to trigger limit switch
 G0 X10 F120 S1
 
-; Set this location as X = 383mm
-G92 X383
+; Set this location as X = 380mm
+G92 X380
 
 ; Move away from the limit switch, to prevent damage to it upon next move
 G0 X-5 F1500
@@ -66,9 +63,6 @@ G90
 
 ; Re-enable mesh leveling
 G29 S1
-
-M913 X100                    ; X motor currents back to 100%
-M913 Y100                    ; Y motor currents back to 100%
 
 M98 Pmachine_axisdimension.g ; Set Axes Limits
 

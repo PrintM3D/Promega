@@ -1,0 +1,10 @@
+For start-up success, unboxing guides and more info please visit launchpad.printm3d.com
+
+ABRIDGED NOTES 
+- PLA must print with fans on and top cover off.
+- Please read our unpackaging and warnings guide
+- Use our cura settings to get started
+
+for official M3D issues, please use our ticketing system at https://support.printm3d.com/
+
+for community support and discussion visit discord https://discordapp.com/invite/fzA83gd

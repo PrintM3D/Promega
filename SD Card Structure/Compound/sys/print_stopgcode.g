@@ -1,4 +1,4 @@
-M117 Print Complete
+M291 P"Print Complete"
 M140 S0 ; turn off bed
 G92 E1 ;Set Steps for Retraction
 G1 E-1.5 F300 ;perform retraction
@@ -15,3 +15,5 @@ G1 X200 Y200 F3000 ; go to X=350 Y=350 to move head out of the way (usually)
 G28 Z ; Home Z
 M84 ; disable motors
 M106 S0 ; turn off cooling fan
+
+M290 R0 S0 ; clear babystepping
