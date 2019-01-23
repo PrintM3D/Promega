@@ -9,5 +9,5 @@
 ; the bed clips with the hot end.  Anywhere between 35 and 40 is probably a good start.
 ; The S parameter defines the distance between two mesh points in mm.
 
-M557 X0:325 Y30:380 S30 ; Define heightmap mesh
+M557 X0:325 Y32:380 S30 ; Define heightmap mesh
 M376 H25 ; Define height(mm) over which to taper off heightmap compensation

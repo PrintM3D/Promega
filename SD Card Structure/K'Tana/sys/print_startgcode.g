@@ -1,7 +1,9 @@
 ; startgcode.g
 ; called from the slicer
 
-M117 Print Setup Starting
+M291 P"Print Setup Starting"
+
+M290 R0 S0 ; clear babystepping
 
 G28 ;home all
 
@@ -15,4 +17,4 @@ G1 Y175 F180 ; ooze it out buddy
 G1 Y200 F5000 ; wipe off the ooze
 ;G1 Z5 F100 ; Lift off bed
 G92 E0 ;zero extruder
-M117 Ready to Print
+M291 P"Ready to Print"

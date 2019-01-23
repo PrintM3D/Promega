@@ -5,7 +5,7 @@ M291 P"Meshing the bed, this will home the printer, heat the bed and nozzle and 
 M140 S60 ; Start heating bed to 60c
 G10 P0 S150 ;turn on extruder
 G10 P1 S150 ;turn on extruder
-G10 P2 S150 ;turn on extruder
+; G10 P2 S150 ;turn on extruder, Compound only
 
 G28 ; Home all
 G28 Z ; Home z
