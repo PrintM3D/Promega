@@ -33,9 +33,10 @@ G4 P401
 M291 P"Slowly move the bed up until nozzle is touching. Press OK when done." S2 Z1
 
 G92 Z0 ; set the current Z position as 0
-G1 Z20 ; lower bed by 20mm
+G1 Z100 ; lower bed to 100mm from the nozzle; need plenty of room to deploy z probe which is takes more room on the quad mount!
 
-M291 P"Deploy the Z Probe if needed. Press OK when done." S2
+M291 P"Deploy the Z Probe if not deployed. Press OK when done." S2
+G1 Z20 ; raise the bed back to 20mm from the nozzle before starting the measurement.
 G30 S-1 ; this will measure the Z Probe Z offset from 0
 
 ;Beep 3 times
@@ -46,7 +47,7 @@ G4 P401
 M300 S600 P250
 G4 P401
 
-M291 P"Retract the Z Probe if needed. Press OK to continue." S2
+M291 P"Retract the Z Probe if it is still deployed. Press OK to continue." S2
 M291 P"Record the Z axis value displayed in the Machine Status and set the G31 Z value in machine_zprobe.g to the value recorded." S2
 M291 P"After the file has been saved run the _2_Set_Z_Endstop_Height.g macro" S2
 M291 P"These messages are also displayed on the g-code console screen." S2
