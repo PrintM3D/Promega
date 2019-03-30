@@ -5,11 +5,7 @@
 M140 S60 ; set the bed to 60C, change depending on your desired bed temp
 M190 S60 ; wait for the bed to reach 60C, change depending on your desired bed temp
 M104 T0 S150 ; set the nozzle to 150C
-M104 T1 S150 ; set the nozzle to 150C
-M104 T2 S150 ; set the nozzle to 150C
 M109 T0 S150 ; wait for the nozzle to read 150C
-M109 T1 S150 ; wait for the nozzle to read 150C
-M109 T2 S150 ; wait for the nozzle to read 150C
 
 ; Clear any bed transform
 G29 S2 ; Does the same as M561!
