@@ -15,4 +15,4 @@
 * [Addons](https://github.com/PrintM3D/Promega/tree/devel/addons) - Collection of addons created by M3D and the community.
 
 ## Instructions Links:
-* [How to Download SD Card Content](https://promega.printm3d.com/getting-started/updating-sd-card-structure#downloading-directly-from-repository)
+* [How to Download SD Card Content](https://promega.printm3d.com/getting-started/updating-sd-card-structure)
