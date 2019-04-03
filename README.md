@@ -26,6 +26,8 @@ If you are looking for support, feel free to look through our ever-improving doc
 - https://coda.io/d/M3D-Official-Troubleshooting-Self-Help-Guide_dzE73kMbIAL/Introduction_sucuq#_lulpw
 - https://promega.printm3d.com/
 
+If you'd like to voice your input on improving our documentation, visit https://promega.printm3d.com/#contributing.
+
 Our support ticket is available at https://store.printm3d.com/pages/support.
 
 -M3D Team
