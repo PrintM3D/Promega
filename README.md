@@ -16,3 +16,7 @@
 
 ## Instructions Links:
 * [How to Download SD Card Content](https://promega.printm3d.com/getting-started/updating-sd-card-structure)
+
+## Creating Issues 
+* Please ONLY log issues pertinent to software bugs or operational anomalies (suspected to be software-related)
+* Any other issues logged will be not be addresed and will be deleted.
