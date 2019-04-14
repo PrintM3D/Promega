@@ -29,7 +29,7 @@ M98 Pmachine_steppercurrent.g ; set stepper currents
 M98 Pmachine_stepperspeed.g   ; set stepper speeds
 M98 Pmachine_axisdimension.g  ; configure the axes dimensions
 M98 Pmachine_axissteps.g      ; configure the axes steps per mm
-M98 Pmachine_extruderstep.g   ; configure the extruder steps
+
 G21 ; Work in millimetres
 G90 ; Set to absolute coordinates...
 M84 S1 ; Set idle timeout
