@@ -6,5 +6,5 @@
 ; Here is a link to how to calibrate extruder steps:
 ; http://print.theporto.com/posts/how-to-calibrate-your-3d-printer-extruder-steps/
 
-M92 E2340.8:2356.5:2236.3:2350.4 ; Extruder Steps/mm (This is approximate for the Quad. It could be calibrated for individual extruder variances.)
-M350 E128:128    ; Setting microstepping to 1/128.
+M92 E2140:2140:2140:2140 ; Extruder Steps/mm (This is approximate for the Quad. It could be calibrated for individual extruder variances.)
+M350 E16:16:16:16    ; Setting microstepping.
