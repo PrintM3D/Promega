@@ -21,9 +21,9 @@ G29 S1 ; Load heightmap after power cycle
 ; --- SECTION: DRIVES (MOVEMENT SECTION) & ENDSTOPS ---
 
 M667 S1  ; Enable coreXY mode
-M569 P0 S0 V0 ; Drive 0 goes forwards, CoreXY_1
-M569 P1 S1 V0 ; Drive 1 goes forwards, CoreXY_2
-M569 P2 S1 V0 ; Drive 2 goes forwards, Z Motor
+M569 P0 S0 D3 V0 ; Drive 0 goes backwards, CoreXY_1
+M569 P1 S1 D3 V0 ; Drive 1 goes forwards, CoreXY_2
+M569 P2 S1 D3 V0 ; Drive 2 goes forwards, Z Motor
 M98 Pmachine_endstoptypes.g   ; set endstop types
 M98 Pmachine_steppercurrent.g ; set stepper currents
 M98 Pmachine_stepperspeed.g   ; set stepper speeds
@@ -36,19 +36,17 @@ M84 S1 ; Set idle timeout
 
 ; --- SECTION: HEATERS, BED & THERMISTOR ---
 ; H0 is bed
-; H1 is left heater
-; H2 is right heater
+; H1 is extruder heater
 
 M570 H0 P25 T30                           ; Allow heater to be off by as much as 30C for 25 seconds
 M570 H1 P15 T30                           ; Allow heater to be off by as much as 30C for 15 seconds
-M570 H2 P15 T30                           ; Allow heater to be off by as much as 30C for 15 seconds
 
 M305 P0 T100000 B4138 C0 R2200            ; Set thermistor + ADC parameters for heater 0, For heated Bed thermistor
 M307 H0 A78.9 C265.2 D9.5 S1.00 V24.0 B0  ; Forcing heated bed PID control after power-cycle. Basic bed heating auto-tune
 
-M143 H0 S120                   				; Set temperature limit for heater 0 to 120C
+M143 H0 S120                   				  ; Set temperature limit for heater 0 to 120C
 M305 P1 T100000 B5140 C1.890000e-7			; Thermistor Config for NTC 100k
-M143 H1 S265                  				; Set temperature limit for heater 1 to 265C
+M143 H1 S265                  				  ; Set temperature limit for heater 1 to 265C
 
 M302 P1                                   ; Allow Cold extrudes
 M98 Pmachine_maxtemp.g                    ; set bed and extruder max temperatures
