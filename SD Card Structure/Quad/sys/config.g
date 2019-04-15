@@ -53,9 +53,10 @@ M98 Pmachine_maxtemp.g						; set bed and extruder max temperatures
 
 ; --- SECTION: FANS ( ) ---
 
-M106 P0 S0 I0 F4 H-1 L0.3					; Filter fan. Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off, Minimum fan value 0.3, Speed 100%
-M106 P1 T45 H1 F50                			; Set Heatsink Fan F0 to Thermostatic
-M106 P2 H-1 F50                   			; Set Part Cooler Fans F1 to Gcode Control
+M106 P0 T45 H1 F50                			; Set Heatsink Fan F0 to Thermostatic
+M106 P1 H-1 F50                   			; Set Part Cooler Fans F1 to Gcode Control
+M106 P2 S0 I0 F4 H-1 L0.3					; Filter fan. Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off, Minimum fan value 0.3, Speed 100%
+
 
 ; --- SECTION: TOOLS ( ) --- 
 
