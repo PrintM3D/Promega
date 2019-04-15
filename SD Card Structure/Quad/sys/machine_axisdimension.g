@@ -1,5 +1,5 @@
 ; machine_axisdimension.g
-; June 29, 2018
+; April 15, 2019
 
 ; Set the minimum and maximum extent for each axis here.
 ; The minimum for the Z axis should not be more than 0.5mm past 0 under normal operation
