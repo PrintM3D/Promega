@@ -41,8 +41,7 @@ M84 S1										; Set idle timeout
 
 ; --- SECTION: HEATERS, BED & THERMISTOR ---
 ; H0 is bed
-; H1 is left heater
-; H2 is right heater
+; H1 is extruder heater
 
 M570 H0 P25 T30								; Allow heater to be off by as much as 30C for 25 seconds
 M570 H1 P15 T30								; Allow heater to be off by as much as 30C for 15 seconds
