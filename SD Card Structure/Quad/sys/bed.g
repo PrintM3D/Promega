@@ -25,7 +25,7 @@ G29 S0 ; Run the bed leveling, and enable compensation
 ;G30	P1	X	41	Y	378	Z	-99999	H	-0.4	
 ;G30	P2	X	371	Y	378	Z	-99999	H	-0.5	
 ;G30	P3	X	371	Y	30	Z	-99999	H	-0.75
-;G30	P4	X	191	Y	198	Z	-99999	H	0	S5
+;G30	P4	X	191	Y	198	Z	-99999	H	0	    S5
 
 ; + Pattern
 ;G30		P0	X	129	Y	130	Z	-99999	H	0

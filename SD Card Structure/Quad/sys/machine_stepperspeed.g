@@ -1,5 +1,5 @@
 ; machine_stepperspeed.g
-; June 29, 2018
+; April 15, 2019
 
 ; This sets the different speed limits of the X Y and Z steppers.
 ; A higher acceleration value makes for faster print speeds, but can also introduce ghosting and other artifacts.
@@ -8,6 +8,6 @@
 ; abrupt direction changes.
 ; These are advanced feature values and should only be changed for good reason and if you know how they impact prints.
 
-M201 X500 Y500 Z75 E250 ; Set accelerations (mm/s^2)
-M203 X4200 Y4200 Z2300 E5000 ; Set maximum linear speeds
-M566 X400 Y400 Z40 E300 ; Set maximum instantaneous speed changes (mm/min)
+M201 X3000 Y3000 Z75 E240 ; Set accelerations (mm/s^2)
+M203 X9000 Y9000 Z2300 E1800 ; Set maximum linear speeds
+M566 X350 Y350 Z50 E120 ; Set maximum instantaneous speed changes/jerk (mm/min)
