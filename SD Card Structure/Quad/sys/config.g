@@ -62,7 +62,7 @@ M106 P2 H-1 F50                   			; Set Part Cooler Fans F1 to Gcode Control
 ; Comment: Remember! H0 is the heated bed!
 ; Comment: D0 is the first driver after movement (X, Y and Z) drives, which are the extruders
 
-M98 Pmachine_quad_tools.g				; Define compound tools
+M98 Pmachine_quad_tools.g				; Define quad tools
 
 T0											; Automatic tool select
 
