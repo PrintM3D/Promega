@@ -1,6 +1,7 @@
 ;_____________Mesh Bed_____________
-M291 P"Do you want to Mesh the Bed?" S3
-M291 P"Meshing the bed, this will home the printer, heat the bed and nozzle and then give you further instructions." S0
+
+M291 P"Do you want to Mesh Your Bed?" S3
+M291 R"PREPARING BED COMPENSATION (MESHING)" P"Now homing and heating up (nozzle & bed). Wait for further instructions." S0
 
 M140 S60 ; Start heating bed to 60c
 G10 P0 S150 ;turn on extruder
@@ -26,8 +27,8 @@ G4 P401
 M300 S600 P250
 G4 P401
 
-M291 P"Deploy the Z Probe if needed. Press OK when done." S2
-M291 P"Bed Mesh starting. Make sure to turn off Heaters when done." S2
+M291 R"(CHECKPOINT)" P"Deploy the Z Probe. Press OK when done." S2
+M291 R"NOTICE" P"Bed Mesh Starting." S2
 G1 Z20 F1500 ; raise bed back to z 20mm from the nozzle
 G32 ; Executes the bed mesh procedure defined in bed.g
 
@@ -57,5 +58,10 @@ G4 P250
 M300 S3500 P200
 G4 P250
 
-G1 Z100 F1500 ; Move the bed to Z 100mm from the nozzle so that there is room to retract the z probe if desired.
-M291 P"Retract the Z Probe, if you're not going to re-run this macro. Press OK when done." S2
+G1 X200 Y200 Z100 F1500 ; Move the bed to Z 100mm from the nozzle so that there is room to retract the z probe if desired.
+M291 R"IMPORTANT: PLEASE READ" P"Retract the Z Probe, if you're not going to re-run this macro. Press OK when done." S2
+
+M291 R"NOTICE" P"Do you want to turn off your heaters (Bed & Nozzle)?" S3
+
+M140 S0 	; turn off heated bed
+G10 P0 S0 	;turn off extruder
