@@ -48,7 +48,7 @@ G4 P401
 
 G91; Relative mode 
 G1 z100; lower the bed by 100mm
-M291 R"(IF NEEDED)" P"Retract the Z Probe. Press OK to continue." S2
+M291 R"Z PROBE RETRACTION" P"Retract the Z Probe. Press OK to continue." S2
 G1 Z-100; move bed back to prev. position
 
 M291 R"AFTER THE PROMPT" P"Record Z value displayed in Machine Status Table." S2
