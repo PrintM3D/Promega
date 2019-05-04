@@ -25,10 +25,10 @@ M667 S1										; Enable coreXY mode
 M569 P0 S0 D3 V0							; Drive 0 goes forwards, CoreXY_1, stealth chop, disable spread cycle
 M569 P1 S1 D3 V0							; Drive 1 goes forwards, CoreXY_2, stealth chop, disable spread cycle
 M569 P2 S1 D3 V0							; Drive 2 goes forwards, Z Motor, stealth chop, disable spread cycle
-M569 P3 S1 D3 V0                          	; Drive 3 (E0)
-M569 P4 S1 D3 V0			 			  	; Drive 4 (E1)
-M569 P5 S1 D3 V0			 			  	; Drive 5 (E2)
-M569 P6 S1 D3 V0			 			  	; Drive 6 (E3)
+M569 P3 S0 D3 V0 								; Drive 3 (E0)
+M569 P4 S0 D3 V0								; Drive 4 (E1)
+M569 P5 S0 D3 V0			 			  	; Drive 5 (E2)
+M569 P6 S0 D3 V0			 			  	; Drive 6 (E3)
 M98 Pmachine_endstoptypes.g					; set endstop types
 M98 Pmachine_steppercurrent.g				; set stepper currents
 M98 Pmachine_stepperspeed.g					; set stepper speeds
