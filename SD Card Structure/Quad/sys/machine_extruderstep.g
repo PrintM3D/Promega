@@ -8,6 +8,6 @@
 
 M350 E16		; Confirming default 1/16 microstepping mode for calculation, in case firmware default changes
 
-M92 E2140 ; Extruder microteps/mm
+M92 E2340.8:2356.5:2236.3:2350.4 ; Extruder Steps/mm (Format: M92 Extruder0:Extruder1:Extruder2:Extruder3)
 
 M350 E128    ; Set microstepping mode to 1/128.
